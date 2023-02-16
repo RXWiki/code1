@@ -1,0 +1,15 @@
+{% extends 'museum/base.html' %}
+
+{% block content %}
+<div id="value"><h1 id="value1" class="text-center">{{value}}</h1></div>
+	{% if quest.photo %}
+	<img class="img-thumbnail" src="{{quest.photo.url}}">
+	{% endif %}
+<p class="text-center">{{quest.content}}</p>
+	<hr>
+<form>
+	{% csrf_token %}
+	<button class="btn btn-light" type="button" id="yes">{{choice.choice_text}}</button>
+	<button class="btn btn-dark" type="button" id="no">{{choice.choice_text2}}</button>
+</form>
+{% endblock %}

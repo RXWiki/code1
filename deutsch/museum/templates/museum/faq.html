@@ -1,0 +1,15 @@
+{% extends 'museum/base.html' %}
+
+{% block content %}
+<h1>Все о театрах:</h1>
+<ul>
+	{% for p in posts %}
+	<h1>{{p.title}}</h1>
+	{% if p.photo %}
+	<img src="{{p.photo.url}}">
+	{% endif %}
+	<p>{{p.content}}</p>
+	<hr>
+	{% endfor %}
+</ul>
+{% endblock %}
